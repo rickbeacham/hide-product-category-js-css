@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+
+<script type="text/javascript">
+// Plain JS
+
+// Make sure the page has finished loading the DOM
+document.addEventListener('DOMContentLoaded', function () {
+// Get user's current URL from browser
+let url      = window.location.pathname; 
+console.log(url);
+// Is this the Product category listing we want to hide a category from? 
+if(url == "index.html") {
+// Inline a style sheet to the HTML document 
+// since we can't rely on html elements being loaded because of lazy loading 
+    let style = document.createElement('style');   
+    // This would be unique to your page.  I used nth-last-child since the PCP we 
+    // needed to hide was always on the bottom of the page. 
+    // You could get more fancy and find the the listing however you want but this was the easiest
+    let css = '#categories-list li:nth-last-child(1){' +
+        'display: none;}';       
+    style.innerHTML = css;
+    //What element of the list (li) do we want to hide?
+    let lastElement = 1;
+    // Let the browser know we want to add the the css to the first found script 
+    let ref = document.querySelector('script');
+    // Insert in the body
+    ref.parentNode.insertBefore(style, ref);
+  } 
+});
+</script>
+
+/* Sample of Product Category Page 
+   Here is want to hide the last li element from the user.  But only on one page not the others.  
+*/
+
+<ul class="products-grid" id="categories-list">
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/108-beautiful-backing.html" title="108&quot; Beautiful Backing" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/sized_thumnail_2.jpg" width="250" height="250" alt="108&quot; Beautiful Backing">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/108-beautiful-backing.html" title="108&quot; Beautiful Backing">108" Beautiful Backing</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/108-dappled.html" title="108&quot; Dappled" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/sized_thumbnail.jpg" width="250" height="250" alt="108&quot; Dappled">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/108-dappled.html" title="108&quot; Dappled">108" Dappled</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<div class="corner-ribbon reduced">Reduced</div>
+<a href="https://maywoodstudio.com/fabric/amour.html" title="Amour" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/AMO_Collection_Thumbnail.jpg" width="250" height="250" alt="Amour">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/amour.html" title="Amour">Amour</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/beautiful-basics.html" title="Beautiful Basics" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Beautiful_Basics_CollectionThumbnail.jpg" width="250" height="250" alt="Beautiful Basics">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/beautiful-basics.html" title="Beautiful Basics">Beautiful Basics</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/belle-epoque.html" title="Belle Epoque" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/BEE_CollectionThumbnail.jpg" width="250" height="250" alt="Belle Epoque">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/belle-epoque.html" title="Belle Epoque">Belle Epoque</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/black-magic.html" title="Black Magic" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Black_Magic_CollectionThumbnail_250w-250h_72ppi_1.jpeg" width="250" height="250" alt="Black Magic">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/black-magic.html" title="Black Magic">Black Magic</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/bloom-on.html" title="Bloom On!" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/BLO_BloomOn.jpg" width="250" height="250" alt="Bloom On!">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/bloom-on.html" title="Bloom On!">Bloom On!</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/bramble-patch.html" title="Bramble Patch" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/BRP_Bramble_Patch_Thumbnail.jpg" width="250" height="250" alt="Bramble Patch">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/bramble-patch.html" title="Bramble Patch">Bramble Patch</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/can-animals-count.html" title="Can Animals Count?" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/CAC_CanAnimalsCount.jpg" width="250" height="250" alt="Can Animals Count?">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/can-animals-count.html" title="Can Animals Count?">Can Animals Count?</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/citrus-sunshine-kimberbell-curated.html" title="Citrus &amp; Sunshine - KimberBell Curated" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Citrus_and_sunshine_1.jpg" width="250" height="250" alt="Citrus &amp; Sunshine - KimberBell Curated">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/citrus-sunshine-kimberbell-curated.html" title="Citrus &amp; Sunshine - KimberBell Curated">Citrus &amp; Sunshine - KimberBell Curated</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<div class="corner-ribbon reduced">Reduced</div>
+<a href="https://maywoodstudio.com/fabric/coastal-getaway.html" title="Coastal Getaway Batiks" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/COG_CollectionThumbnail.jpg" width="250" height="250" alt="Coastal Getaway Batiks">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/coastal-getaway.html" title="Coastal Getaway Batiks">Coastal Getaway Batiks</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/color-therapy-batiks.html" title="Color Therapy Batiks" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/CTB_CollectionThumbnail.jpg" width="250" height="250" alt="Color Therapy Batiks">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/color-therapy-batiks.html" title="Color Therapy Batiks">Color Therapy Batiks</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/color-wash-woolies-flannel.html" title="Color Wash Woolies Flannel" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/CWWF_CollectionThumbnail.jpg" width="250" height="250" alt="Color Wash Woolies Flannel">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/color-wash-woolies-flannel.html" title="Color Wash Woolies Flannel">Color Wash Woolies Flannel</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/creative-grid.html" title="Creative Grid" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/_MAS_Creative_Grid.jpg" width="250" height="250" alt="Creative Grid">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/creative-grid.html" title="Creative Grid">Creative Grid</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/dusk-to-dawn-batiks.html" title="Dusk to Dawn Batiks" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/sized_thumbnail_3.jpg" width="250" height="250" alt="Dusk to Dawn Batiks">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/dusk-to-dawn-batiks.html" title="Dusk to Dawn Batiks">Dusk to Dawn Batiks</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/elegant-scroll-108-beautiful-backing.html" title="Elegant Scroll (108&quot; Beautiful Backing)" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/elegant_scroll_1.jpg" width="250" height="250" alt="Elegant Scroll (108&quot; Beautiful Backing)">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/elegant-scroll-108-beautiful-backing.html" title="Elegant Scroll (108&quot; Beautiful Backing)">Elegant Scroll (108" Beautiful Backing)</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/fire-ice.html" title="Fire &amp; Ice" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/FIR_CollectionThumb.jpg" width="250" height="250" alt="Fire &amp; Ice">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/fire-ice.html" title="Fire &amp; Ice">Fire &amp; Ice</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/flower-vine.html" title="Flower &amp; Vine" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/FLV_CollectionThumbnail.jpg" width="250" height="250" alt="Flower &amp; Vine">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/flower-vine.html" title="Flower &amp; Vine">Flower &amp; Vine</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/garden-stroll.html" title="Garden Stroll" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/sized_thumnail_1.jpg" width="250" height="250" alt="Garden Stroll">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/garden-stroll.html" title="Garden Stroll">Garden Stroll</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/gelato-ombre.html" title="Gelato Ombre" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/GEL_CollectionThumbnail.jpg" width="250" height="250" alt="Gelato Ombre">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/gelato-ombre.html" title="Gelato Ombre">Gelato Ombre</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/glad-tidings.html" title="Glad Tidings" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/GLT_CollectionThumbnail.jpg" width="250" height="250" alt="Glad Tidings">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/glad-tidings.html" title="Glad Tidings">Glad Tidings</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/go-with-the-flow-108-beautiful-backing.html" title="Go With the Flow (108&quot; Beautiful Backing)" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/GoWithTheFlow_CollectionThumbnail.jpg" width="250" height="250" alt="Go With the Flow (108&quot; Beautiful Backing)">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/go-with-the-flow-108-beautiful-backing.html" title="Go With the Flow (108&quot; Beautiful Backing)">Go With the Flow (108" Beautiful Backing)</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/happiness-is-homemade.html" title="Happiness is Homemade" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/HIH_Collection_Thumbnail.jpg" width="250" height="250" alt="Happiness is Homemade">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/happiness-is-homemade.html" title="Happiness is Homemade">Happiness is Homemade</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<div class="corner-ribbon reduced">Reduced</div>
+<a href="https://maywoodstudio.com/fabric/happy-jacks-friends-flannel.html" title="Happy Jacks &amp; Friends Flannel" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/HJFF_CollectionThumbnail.jpg" width="250" height="250" alt="Happy Jacks &amp; Friends Flannel">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/happy-jacks-friends-flannel.html" title="Happy Jacks &amp; Friends Flannel">Happy Jacks &amp; Friends Flannel</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<div class="corner-ribbon reduced">Reduced</div>
+<a href="https://maywoodstudio.com/fabric/heritage-woolies-flannel.html" title="Heritage Woolies Flannel" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/HWF_CollectionThumbnail.jpg" width="250" height="250" alt="Heritage Woolies Flannel">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/heritage-woolies-flannel.html" title="Heritage Woolies Flannel">Heritage Woolies Flannel</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<div class="corner-ribbon reduced">Reduced</div>
+<a href="https://maywoodstudio.com/fabric/home-sweet-home-flannel.html" title="Home Sweet Home Flannel" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/HSHF_CollectionThumbnail.jpg" width="250" height="250" alt="Home Sweet Home Flannel">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/home-sweet-home-flannel.html" title="Home Sweet Home Flannel">Home Sweet Home Flannel</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/hometown-halloween.html" title="Hometown Halloween" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/HTH_Hometown_Halloween.jpg" width="250" height="250" alt="Hometown Halloween">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/hometown-halloween.html" title="Hometown Halloween">Hometown Halloween</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/in-the-black.html" title="In The Black" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/InTheBlack_CollectionThumbnail.jpg" width="250" height="250" alt="In The Black">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/in-the-black.html" title="In The Black">In The Black</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/java-batiks.html" title="Java Batiks" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Java_Batiks_1.png" width="250" height="250" alt="Java Batiks">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/java-batiks.html" title="Java Batiks">Java Batiks</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/joyful.html" title="Joyful" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/JOY_Collection_Thumbnail.jpg" width="250" height="250" alt="Joyful">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/joyful.html" title="Joyful">Joyful</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/kimberbell-basics.html" title="KimberBell Basics" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/KBB_CollectionThumbnail.jpg" width="250" height="250" alt="KimberBell Basics">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/kimberbell-basics.html" title="KimberBell Basics">KimberBell Basics</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/kimberbell-christmas-jingle-whisk.html" title="KimberBell Christmas: Jingle &amp; Whisk" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/KCJW_CollectionThumbnail_300ppi.jpg" width="250" height="250" alt="KimberBell Christmas: Jingle &amp; Whisk">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/kimberbell-christmas-jingle-whisk.html" title="KimberBell Christmas: Jingle &amp; Whisk">KimberBell Christmas: Jingle &amp; Whisk</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/kimberbell-quilt-backs-108.html" title="KimberBell Quilt Backs 108&quot;" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/KBB_108_CollectionThumbnail.jpg" width="250" height="250" alt="KimberBell Quilt Backs 108&quot;">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/kimberbell-quilt-backs-108.html" title="KimberBell Quilt Backs 108&quot;">KimberBell Quilt Backs 108"</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/kimberbell-silky-solids.html" title="KimberBell Silky Solids" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/KSS_CollectionThumbnail_72ppi.jpg" width="250" height="250" alt="KimberBell Silky Solids">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/kimberbell-silky-solids.html" title="KimberBell Silky Solids">KimberBell Silky Solids</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/lavender-sachet-mas.html" title="Lavender Sachet" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/LAVS_CollectionThumbnail.jpg" width="250" height="250" alt="Lavender Sachet">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/lavender-sachet-mas.html" title="Lavender Sachet">Lavender Sachet</a></p>
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<div>
+<a href="https://maywoodstudio.com/fabric/lexington.html" title="Lexington" class="category-image">
+<img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/LEX_Collection_Thumbnail.jpg" width="250" height="250" alt="Lexington">
+</a>
+<div class="catalog-shop">
+<div class="f-fix">
+<p class="category-name"><a href="https://maywoodstudio.com/fabric/lexington.html" title="Lexington">Lexington</a></p>
+</div>
+</div>
+</div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/love-is.html" title="Love Is..." class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/LoveIs_CollectionThumbnail.jpg" width="250" height="250" alt="Love Is...">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/love-is.html" title="Love Is...">Love Is...</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/meadow-edge.html" title="Meadow Edge" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/MEE_CollectionThumbnail.jpg" width="250" height="250" alt="Meadow Edge">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/meadow-edge.html" title="Meadow Edge">Meadow Edge</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/measure-twice.html" title="Measure Twice" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/MET_CollectionThumbnail.jpg" width="250" height="250" alt="Measure Twice">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/measure-twice.html" title="Measure Twice">Measure Twice</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+                    <div class="corner-ribbon reduced">Reduced</div>
+        
+                            <a href="https://maywoodstudio.com/fabric/moongate.html" title="Moongate" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/MOO_CollectionThumbnail.jpg" width="250" height="250" alt="Moongate">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/moongate.html" title="Moongate">Moongate</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/opal-essence.html" title="Opal Essence" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/thumbnail_sized_1.jpg" width="250" height="250" alt="Opal Essence">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/opal-essence.html" title="Opal Essence">Opal Essence</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/pearl-essence-34476.html" title="Pearl Essence" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/PEA_CollectionThumbnail_1.jpg" width="250" height="250" alt="Pearl Essence">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/pearl-essence-34476.html" title="Pearl Essence">Pearl Essence</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+                    <div class="corner-ribbon reduced">Reduced</div>
+        
+                            <a href="https://maywoodstudio.com/fabric/prose.html" title="Prose" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/PRO_CollectionThumbnail.jpg" width="250" height="250" alt="Prose">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/prose.html" title="Prose">Prose</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/red-white-bloom.html" title="Red, White &amp; Bloom" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/RWB_CollectionThumbnail.jpg" width="250" height="250" alt="Red, White &amp; Bloom">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/red-white-bloom.html" title="Red, White &amp; Bloom">Red, White &amp; Bloom</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/ruby.html" title="Ruby" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/RUB_CollectionThumbnail.jpg" width="250" height="250" alt="Ruby">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/ruby.html" title="Ruby">Ruby</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/saguaro.html" title="Saguaro" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SAG_Saguaro.jpg" width="250" height="250" alt="Saguaro">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/saguaro.html" title="Saguaro">Saguaro</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sew-essential.html" title="Sew Essential Muslin" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Sew_Essential_Muslin.jpg" width="250" height="250" alt="Sew Essential Muslin">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sew-essential.html" title="Sew Essential Muslin">Sew Essential Muslin</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/shadow-play-5.html" title="Shadow Play" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SHP_CollectionThumbnail.jpg" width="250" height="250" alt="Shadow Play">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/shadow-play-5.html" title="Shadow Play">Shadow Play</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/shadow-play-flannel-1.html" title="Shadow Play Flannel" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SHPF_CollectionThumbnail.jpg" width="250" height="250" alt="Shadow Play Flannel">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/shadow-play-flannel-1.html" title="Shadow Play Flannel">Shadow Play Flannel</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sheltering-tree.html" title="Sheltering Tree" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SHT_CollectionThumbnail.jpg" width="250" height="250" alt="Sheltering Tree">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sheltering-tree.html" title="Sheltering Tree">Sheltering Tree</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/silver-jubilee.html" title="Silver Jubilee" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SIJ_CollectionThumbnail.jpg" width="250" height="250" alt="Silver Jubilee">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/silver-jubilee.html" title="Silver Jubilee">Silver Jubilee</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/snowdays-flannel.html" title="Snowdays Flannel" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SNDF_Collection_Thumbnail.jpg" width="250" height="250" alt="Snowdays Flannel">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/snowdays-flannel.html" title="Snowdays Flannel">Snowdays Flannel</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/solitaire-whites.html" title="Solitaire Whites" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SOL_CollectionThumbnail.jpg" width="250" height="250" alt="Solitaire Whites">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/solitaire-whites.html" title="Solitaire Whites">Solitaire Whites</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sommersville.html" title="Sommersville" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SOM_Collection_Thumbnail.jpg" width="250" height="250" alt="Sommersville">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sommersville.html" title="Sommersville">Sommersville</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+                    <div class="corner-ribbon reduced">Reduced</div>
+        
+                            <a href="https://maywoodstudio.com/fabric/spellcaster-s-garden.html" title="Spellcaster's Garden" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SCG_CollectionThumbnail.jpg" width="250" height="250" alt="Spellcaster's Garden">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/spellcaster-s-garden.html" title="Spellcaster's Garden">Spellcaster's Garden</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/star-flower-108-beautiful-backing.html" title="Star Flower (108&quot; Beautiful Backing)" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Starflower_CollectionThumbnail.jpg" width="250" height="250" alt="Star Flower (108&quot; Beautiful Backing)">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/star-flower-108-beautiful-backing.html" title="Star Flower (108&quot; Beautiful Backing)">Star Flower (108" Beautiful Backing)</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/starlight-metallics.html" title="Starlight Metallics" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/STM_CollectionThumbnail.jpg" width="250" height="250" alt="Starlight Metallics">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/starlight-metallics.html" title="Starlight Metallics">Starlight Metallics</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/story-time.html" title="Story Time" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/STT_CollectionThumbnail.jpg" width="250" height="250" alt="Story Time">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/story-time.html" title="Story Time">Story Time</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sunlit-blooms.html" title="Sunlit Blooms" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SUB_Collection_Thumbnail.jpg" width="250" height="250" alt="Sunlit Blooms">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sunlit-blooms.html" title="Sunlit Blooms">Sunlit Blooms</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sweater-weather-mas.html" title="Sweater Weather" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SWW_Sweater_Weather.jpg" width="250" height="250" alt="Sweater Weather">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sweater-weather-mas.html" title="Sweater Weather">Sweater Weather</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/sweet-beginnings.html" title="Sweet Beginnings" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/SWB_Sweet_Beginnings.jpg" width="250" height="250" alt="Sweet Beginnings">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/sweet-beginnings.html" title="Sweet Beginnings">Sweet Beginnings</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/vintage-boardwalk.html" title="Vintage Boardwalk" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/VIB_CollectionThumbnail.jpg" width="250" height="250" alt="Vintage Boardwalk">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/vintage-boardwalk.html" title="Vintage Boardwalk">Vintage Boardwalk</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/vintage-damask-108-beautiful-backing.html" title="Vintage Damask (108&quot; Beautiful Backing)" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/Vintage_Damask_CollectionThumbnail_300_1.jpg" width="250" height="250" alt="Vintage Damask (108&quot; Beautiful Backing)">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/vintage-damask-108-beautiful-backing.html" title="Vintage Damask (108&quot; Beautiful Backing)">Vintage Damask (108" Beautiful Backing)</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+                    <div class="corner-ribbon reduced">Reduced</div>
+        
+                            <a href="https://maywoodstudio.com/fabric/warm-wishes.html" title="Warm Wishes" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/WAW_CollectionThumbnail.jpg" width="250" height="250" alt="Warm Wishes">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/warm-wishes.html" title="Warm Wishes">Warm Wishes</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/we-whisk-you-a-merry-xmas.html" title="We &quot;Whisk&quot; You a Merry Christmas!" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/WYMC_CollectionThumbnail.jpg" width="250" height="250" alt="We &quot;Whisk&quot; You a Merry Christmas!">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/we-whisk-you-a-merry-xmas.html" title="We &quot;Whisk&quot; You a Merry Christmas!">We "Whisk" You a Merry Christmas!</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/woolies-flannel-1.html" title="Woolies Flannel" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/WOF_CollectionThumbnail.jpg" width="250" height="250" alt="Woolies Flannel">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/woolies-flannel-1.html" title="Woolies Flannel">Woolies Flannel</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+
+<li class="item">
+    <div>
+        
+                            <a href="https://maywoodstudio.com/fabric/kansas-nebraska-shop-hop.html" title="zz All Kansas &amp; Nebraska Shop Hop" class="category-image">
+                <img src="https://d1nvdmt0osh3cv.cloudfront.net/media//catalog/category/cache/250x250/shop_hop_1.jpg" width="250" height="250" alt="zz All Kansas &amp; Nebraska Shop Hop">
+            </a>
+                <div class="catalog-shop">
+            <div class="f-fix">
+                <p class="category-name"><a href="https://maywoodstudio.com/fabric/kansas-nebraska-shop-hop.html" title="zz All Kansas &amp; Nebraska Shop Hop">zz All Kansas &amp; Nebraska Shop Hop</a></p>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript">window.paginateCategoryUrl = false;</script>
+</li>
+</ul>
